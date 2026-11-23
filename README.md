@@ -8,11 +8,11 @@
 
 | Họ tên | MSSV | Vai trò | Phụ trách |
 |---|---|---|---|
-| Nguyễn Hoàng Long | [MSSV] | Leader | Điều phối, review, báo cáo, slide |
-| [Tên] | [MSSV] | Data Engineer | Thu thập dữ liệu (`data/collection/`) |
-| [Tên] | [MSSV] | Data Analyst | EDA, Preprocessing, Feature Engineering (notebook 01–03) |
-| [Tên] | [MSSV] | ML Engineer | Modeling, tuning, đánh giá (notebook 04) |
-| [Tên] | [MSSV] | Backend / Frontend | FastAPI, giao diện, Explainability (notebook 05) |
+| Nguyễn Hoàng Long | [MSSV] | Leader | Explainability SHAP/LIME (notebook 05), điều phối, review, báo cáo, slide, README |
+| [Tên] | [MSSV] | Data Engineer | Thu thập dữ liệu (`data/collection/`), EDA (notebook 01) |
+| [Tên] | [MSSV] | Data Analyst | Preprocessing, Feature Engineering (notebook 02, 03) |
+| [Tên] | [MSSV] | ML Engineer | Modeling, tuning, đánh giá, Error Analysis (notebook 04) |
+| [Tên] | [MSSV] | Backend / Frontend | FastAPI, giao diện, tích hợp, test demo |
 
 ## 2. Bài toán và dữ liệu
 
