@@ -1,0 +1,55 @@
+[project]
+name = "module3"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "nguyen hoang long", email = "hoanglong280907@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "beautifulsoup4>=4.15.0",
+    "joblib>=1.6.0",
+    "lightgbm>=4.7.0",
+    "lime>=0.2.0.1",
+    "matplotlib>=3.11.2",
+    "numpy>=2.5.5",
+    "optuna>=5.1.0",
+    "pandas>=3.1.1",
+    "requests>=2.34.2",
+    "scikit-learn>=1.9.1",
+    "seaborn>=0.13.2",
+    "shap>=0.54.1",
+    "xgboost>=3.4.1",
+]
+
+[project.scripts]
+module3 = "module3:main"
+
+[build-system]
+requires = ["uv_build>=0.13.1,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+backend = [
+    "fastapi>=0.165.0",
+    "joblib>=1.6.0",
+    "lightgbm>=4.7.0",
+    "numpy>=2.5.5",
+    "pandas>=3.1.1",
+    "pydantic>=2.14.4",
+    "scikit-learn>=1.9.1",
+    "shap>=0.54.1",
+    "uvicorn[standard]>=0.54.0",
+    "xgboost>=3.4.1",
+]
+dev = [
+    "ipykernel>=7.4.0",
+    "jupyter>=1.1.1",
+    "playwright>=1.65.2",
+    "selenium>=4.53.0",
+]
+frontend = [
+    "requests>=2.34.2",
+    "streamlit>=1.67.0",
+]
