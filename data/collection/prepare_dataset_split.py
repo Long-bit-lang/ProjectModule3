@@ -62,10 +62,18 @@ def prepare_and_split(
                 .str.replace(r"\s+", " ", regex=True)
                 .str.strip()
             )
-    # Giới hạn description ở 500 ký tự đầu (phần tóm tắt chính hiển thị trên YouTube)
-    # để giữ dung lượng youtube_train.csv < 30MB (dưới ngưỡng cảnh báo 50MB của GitHub)
+    # Bảo toàn 100% thông tin thống kê của toàn bộ description gốc TRƯỚC KHI cắt ngắn 500 ký tự đầu:
     if "description" in df.columns:
-        df["description"] = df["description"].str.slice(0, 500)
+        full_desc = df["description"]
+        df["desc_full_char_len"] = full_desc.str.len()
+        df["desc_full_word_count"] = full_desc.str.split().str.len()
+        df["desc_url_count"] = full_desc.str.count(r"https?://")
+        df["desc_hashtag_count"] = full_desc.str.count(r"#\w+")
+        df["desc_has_timestamps"] = full_desc.str.contains(
+            r"\b\d{1,2}:\d{2}\b", regex=True
+        ).astype(int)
+        # Giữ 500 ký tự đầu (phần tóm tắt nội dung riêng của video, loại bỏ phần footer copy-paste cuối bài)
+        df["description"] = full_desc.str.slice(0, 500)
     df = df[df["view_count"].notna() & (df["view_count"] > 0)].copy()
     df = df[df["duration_sec"] > 0].copy()
 
