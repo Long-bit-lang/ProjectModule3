@@ -15,4 +15,7 @@ wheels/
 __pycache__/
 .env
 data/processed/*.parquet
+data/raw/youtube_videos_raw.csv
+data/raw/youtube_dataset_full.csv
+.~lock.*
 *.log
